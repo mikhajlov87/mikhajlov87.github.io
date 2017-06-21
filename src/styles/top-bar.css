@@ -1,0 +1,32 @@
+.top-bar {
+  display: flex;
+  padding: .5694em 1.25em;
+  background-color: #D7E2E3;
+  &__about {
+    font-size: 1.001em;
+    color: rgba(0, 0, 0, 0.5);
+    &:hover,
+    &:active,
+    &:focus {
+      color: $light-gray;
+    }
+  }
+  &__link {
+    display: flex;
+    margin-left: 1.21em;
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  &__logo {
+    height: 3.757em;
+  }
+  &__title {
+    display: inline-block;
+    margin: auto;
+    font: 400 1.488em 'Roboto', sans-serif;
+    color: $light-gray;
+  }
+}
