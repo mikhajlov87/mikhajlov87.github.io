@@ -1,0 +1,138 @@
+.main-navbar {
+  justify-content: flex-start;
+  min-height: 3.125rem;
+  padding: 0 1em;
+  background-color: $bluegreen;
+  &__toggler {
+    padding: .73em;
+    border: none;
+    border-radius: 0;
+    font-weight: 400;
+    color: $dark-bluegreen;
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+    }
+  }
+  &__link {
+    padding: 1.071em !important;
+    font-size: .875em;
+    font-weight: 500;
+    color: $dark-bluegreen;
+    &:not(&--active):hover,
+    &:not(&--active):active,
+    &:not(&--active):focus {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: $dark-bluegreen;
+    }
+  }
+  &__icon {
+    width: 1.25rem;
+  }
+  &__search {
+    align-self: center;
+    flex-basis: 16.25rem;
+    margin: 0 .937em;
+  }
+  &__create {
+    margin-right: 1.336em;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-size: 1.312em;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #f00;
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: #f00;
+      background-color: rgba(255, 255, 255, 0.4);
+      color: #f00;
+    }
+  }
+}
+.search {
+  &__input {
+    padding: .357em .625em;
+    border: none;
+    border-radius: 0;
+    font-size: .875em;
+    line-height: 1.49em;
+  }
+}
+.language {
+  &__button {
+    padding: .984em 1.25em;
+    border: none;
+    border-radius: 0;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: $dark-bluegreen;
+    &::after {
+      display: none;
+    }
+    &:hover,
+    &:active,
+    &.active {
+      background-color: #E7EEEF !important;
+    }
+  }
+  &__menu {
+    min-width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  }
+  &__item {
+    padding: .97em 1.5em;
+    font-size: .875rem;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .main-navbar {
+    &__item {
+      display: none;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .main-navbar {
+    padding: 0;
+    &__collapse {
+      padding-top: 3.125rem;
+    }
+    &__item {
+      display: inline-block;
+    }
+    &__search {
+      flex-basis: auto;
+      margin-top: .937em;
+      margin-bottom: .937em;
+    }
+    &__create,
+    &__language {
+      margin-left: .937rem !important;
+      margin-bottom: .937rem;
+    }
+    &__create {
+      padding: .55em .96em;
+    }
+  }
+  .search {
+    &__input {
+      width: auto;
+    }
+  }
+}

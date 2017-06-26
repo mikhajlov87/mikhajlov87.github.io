@@ -1,14 +1,43 @@
-/*Font Awesome*/
+/*Fonts*/
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic-ext");
 /*Variables*/
 @import url(variables.css);
-/*Top bar*/
-@import url("top-bar.css");
 
+@import url("top-bar.css");
+@import url("nav-bar.css");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
 .btn {
+  font-family: "Roboto", sans-serif;
   &:hover,
   &:active,
   &:focus {
     cursor: pointer;
+    box-shadow: none;
+  }
+}
+.tooltip-inner {
+  padding: 0 .9375em;
+  font-size: .75rem;
+  background-color: $dark-bluegreen;
+  opacity: .9;
+  .tooltip.bs-tether-element-attached-top &::before,
+  .tooltip.tooltip-bottom &::before {
+    border-bottom-color: $dark-bluegreen;
+  }
+  .tooltip.bs-tether-element-attached-bottom &::before,
+  .tooltip.tooltip-top &::before {
+    border-top-color: $dark-bluegreen;
+  }
+  .tooltip.bs-tether-element-attached-left &::before,
+  .tooltip.tooltip-right &::before {
+    border-right-color: $dark-bluegreen;
+  }
+  .tooltip.bs-tether-element-attached-right &::before,
+  .tooltip.tooltip-left &::before {
+    border-left-color: $dark-bluegreen;
   }
 }
