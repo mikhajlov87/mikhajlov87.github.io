@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from 'react-fontawesome';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Input, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledTooltip } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -26,9 +26,8 @@ export default class Example extends React.Component {
   render() {
     return (
       <Navbar 
-        className="main-navbar clearfix"
-        toggleable
-        sticky="top">
+        className="main-navbar clearfix sticky-top"
+        toggleable>
         <NavbarToggler
           className="main-navbar__toggler"
           right

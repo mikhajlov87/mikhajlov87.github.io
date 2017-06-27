@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Icon from 'react-fontawesome';
 import { Button } from 'reactstrap';
 
-class TopBar extends Component {
+export default class TopBar extends React.Component {
   render() {
     return (
       <div className="top-bar">
@@ -27,5 +27,3 @@ class TopBar extends Component {
     );
   }
 }
-
-export default TopBar;

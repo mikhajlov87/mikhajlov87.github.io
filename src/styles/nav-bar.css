@@ -1,6 +1,7 @@
 .main-navbar {
   justify-content: flex-start;
   min-height: 3.125rem;
+  margin-bottom: 1.25em;
   padding: 0 1em;
   background-color: $bluegreen;
   &__toggler {
