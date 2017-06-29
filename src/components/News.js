@@ -1,11 +1,11 @@
 import React from 'react';
-import { CardColumns } from 'reactstrap';
+import Masonry from 'react-masonry-component';
 import NewsCard from '../components/NewsCard';
 
 export default class News extends React.Component {
   render() {
     return (
-      <CardColumns className="news container-fluid">
+      <Masonry className="news">
         <NewsCard/>
         <NewsCard/>
         <NewsCard/>
@@ -15,7 +15,7 @@ export default class News extends React.Component {
         <NewsCard/>
         <NewsCard/>
         <NewsCard/>
-      </CardColumns>
+      </Masonry>
     );
   }
 };

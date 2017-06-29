@@ -1,4 +1,5 @@
 .card {
+  margin-bottom: 1.25em;
   &:hover {
     border: 1px solid $teal;
   }
@@ -86,28 +87,5 @@
   }
   &__count {
     margin-left: .25em;
-  }
-}
-@media (min-width: 576px) {
-  .news {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 768px) {
-  .news {
-    column-count: 3;
-  }
-}
-
-@media (min-width: 1200px) {
-  .news {
-    column-count: 4;
-  }
-}
-
-@media (min-width: 1400px) {
-  .news {
-    column-count: 5;
   }
 }
