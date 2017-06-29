@@ -6,10 +6,15 @@
 
 @import url("top-bar.css");
 @import url("nav-bar.css");
+@import url("news.css");
 @import url("footer.css");
 
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+}
+a {
+  color: $teal;
 }
 .btn {
   font-family: "Roboto", sans-serif;
@@ -41,4 +46,18 @@ body {
   .tooltip.tooltip-left &::before {
     border-left-color: $dark-bluegreen;
   }
+}
+.card {
+  padding: 0;
+  border: 1px solid #f0f0f0;
+  border-radius: 0;
+  background-color: #fff;
+  transition: border 0.2s ease-in-out;
+  &-img-top {
+    border-radius: 0;
+  }
+}
+.date {
+  font-size: .687rem;
+  color: #999;
 }
