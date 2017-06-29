@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import News from '../components/News';
 
-class App extends Component {
+class Index extends Component {
   render() {
     return (
       <div>
@@ -17,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Index;

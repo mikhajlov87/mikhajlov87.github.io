@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from 'react-fontawesome';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, Input, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledTooltip } from 'reactstrap';
 
@@ -8,9 +9,11 @@ export default class NavBar extends React.Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggleNavBar = this.toggleNavBar.bind(this);
+    this.toggleProfileButton = this.toggleProfileButton.bind(this);
     this.state = {
       isOpen: false,
-      dropdownOpen: false
+      dropdownOpen: false,
+      profile: false
     };
   }
   toggleDropdown() {
@@ -22,6 +25,23 @@ export default class NavBar extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     })
+  }
+  toggleProfileButton() {
+    if (window.pageYOffset > 78) {
+      this.setState({
+        profile: true
+      })
+    } else {
+      this.setState({
+        profile: false
+      })
+    }
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.toggleProfileButton);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.toggleProfileButton);
   }
   render() {
     return (
@@ -85,8 +105,15 @@ export default class NavBar extends React.Component {
               name="search"
               placeholder="Поиск" />
           </form>
+          { this.state.profile ? 
+            <Link to="/profile"
+              className="main-navbar__profile btn ml-auto"
+              profile={this.state.profile}
+              onScroll={this.toggleProfileButton}>
+                Личный <br/> кабинет
+              </Link> : null }
           <Button 
-            className="main-navbar__create ml-auto"
+            className={this.state.profile ? "main-navbar__create" : "main-navbar__create ml-auto"}
             id="create">
             <Icon
               name="pencil"
