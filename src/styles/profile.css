@@ -1,0 +1,32 @@
+.profile {
+  /*background: url("./profile-left-bg.jpg");*/
+  height: 100vh;
+  background-color: #D1CFDA;
+  &__info {
+    height: 100vh;
+    background-color: #839091;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  }
+  &__close-profile {
+    margin-top: .625em;
+    margin-left: -.937em;
+    padding: .375em .625em;
+    border-radius: 0;
+    background-color: #849192;
+    color: #fff;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+    }
+    &:hover .close-profile__text {
+      display: inline;
+    }
+  }
+}
+.close-profile {
+  &__text {
+    display: none;
+    font-size: .875em;
+  }
+}
