@@ -194,6 +194,7 @@ module.exports = {
                     plugins: () => [
                       require('postcss-import'),
                       require('postcss-flexbugs-fixes'),
+                      require('postcss-mixins'),
                       require('postcss-nested'),
                       require('postcss-simple-vars'),
                       autoprefixer({

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from 'react-fontawesome';
+import Auth from '../components/Profile/Auth'
 
 class Profile extends Component {
   render() {
@@ -12,6 +13,7 @@ class Profile extends Component {
               <span className="close-profile__text">Закрыть кабинет &nbsp;</span>
               <Icon name="sign-out"></Icon>
             </Link>
+            <Auth/>
           </div>
           <div className="profile__info col-md-6"></div>
         </div>

@@ -62,3 +62,56 @@ a {
   font-size: .687rem;
   color: #999;
 }
+/*Socials*/
+.facebook {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #23527c;
+  }
+}
+.vk {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #507299;
+  }
+}
+.odnoklassniki {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #f58220;
+  }
+}
+.twitter {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #1da1f2;
+  }
+}
+/*Transparent forms*/
+@define-mixin transparent $tag {
+  .$(tag)--transparent {
+    padding: .344rem .625rem;
+    border-radius: .25rem !important;
+    border-color: $dark-bluegreen;
+    font-size: .875em;
+    background-color: transparent;
+  }
+}
+@mixin transparent input { 
+  color: #555 !important;
+}
+@mixin transparent button { 
+
+}
+.button--transparent {
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $dark-bluegreen;
+    background-color: rgba(3, 120, 120, 0.1);
+  }
+}

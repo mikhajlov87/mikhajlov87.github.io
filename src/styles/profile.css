@@ -23,10 +23,43 @@
       display: inline;
     }
   }
+  &__auth {
+    max-width: 36.25em;
+    margin: 1.25em auto 0;
+  }
 }
 .close-profile {
   &__text {
     display: none;
     font-size: .875em;
+  }
+}
+.auth {
+  &__methods {
+    font-size: .875em;
+    color: #333;
+  }
+  &__method {
+    padding: .562em;
+    font-size: 1.286em;
+    color: #888;
+  }
+  &__mail-toggle {
+    &:focus {
+      color: #888;
+    }
+    &:hover,
+    &:active,
+    &.active {
+      color: $teal;
+    }
+  }
+}
+.mail {
+  &__item {
+    
+    &:not(:last-child) {
+      margin-right: 1.875rem;
+    }
   }
 }
