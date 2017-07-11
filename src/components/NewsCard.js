@@ -2,44 +2,49 @@ import React from 'react';
 import { Card, CardImg, CardBlock,
   CardTitle, Button } from 'reactstrap';
 import Icon from 'react-fontawesome';
+import TimeAgo from 'react-timeago';
+import ruStrings from 'react-timeago/lib/language-strings/ru'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
+ 
+const formatter = buildFormatter(ruStrings)
 
 const NewsCard = (props) => {
   return (
     <div className="col-sm-6 col-md-4 col-xl-3">
       <Card className="news__card text-center">
         <a 
-          href="#"
+          href={props.mainUrl}
           className="card__heading">
           <CardImg
             top
             className="card__main-img"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-            alt="Card image cap" />
+            src={props.mainImg}
+            alt="Card image" />
           <CardTitle className="card__title text-center">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere velit magni expedita vero, ipsa quisquam provident consequatur ipsum enim ex alias quas.
+            {props.title.replace(/"{2,}/g,"")}
           </CardTitle>
         </a>
         <p className="card__category">Новости страны</p>
         <CardBlock className="card__content">
           <a 
-            href="#"
+            href={props.cityUrl}
             className="card__city">
-            Каир
+            {props.cityName}
           </a>
           <div className="card__author author text-left">
-            <a href="#">
+            <a href={"/user/" + props.user.id}>
               <img
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=35&h=35"
-                className="rounded-circle"
-                alt="avatar"/>
+                src={props.user.avatar.thumb.url}
+                className="rounded-circle author__avatar"
+                alt={props.user.name}/>
             </a>
             <div className="author__info">
               <a
-              href="#"
+              href={"/user/" + props.user.id}
               className="author__name align-top">
-                IUIC Boston
+                {props.user.name}
               </a>
-              <span className="author__date date">25 минут назад</span>
+              <TimeAgo className="author__date date" date={props.date} formatter={formatter} />
             </div>
           </div>
           <div className="card__info info">
@@ -48,14 +53,14 @@ const NewsCard = (props) => {
               className="info__item"
               type="button">
               <Icon name="thumbs-up"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.like}</span>
             </Button>
             <Button
               color="link"
               className="info__item"
               type="button">
               <Icon name="thumbs-down"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.dislike}</span>
             </Button>
             <Button
               color="link"
@@ -63,7 +68,7 @@ const NewsCard = (props) => {
               type="button"
               disabled>
               <Icon name="eye"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.views}</span>
             </Button>
           </div>
         </CardBlock>
