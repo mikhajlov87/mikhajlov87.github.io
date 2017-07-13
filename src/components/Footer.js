@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
             <div className="col-md-3 footer__copyrights">
               <a href="#">
                 <img 
-                  src={process.env.PUBLIC_URL + "main-logo-gray.png"}
+                  src={process.env.PUBLIC_URL + "/main-logo-gray.png"}
                   className="footer__logo"
                   alt="IUIC"/>
               </a>
@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
             </div>
             <div className="col-md-9 footer__navigation">
               <div className="col-md-9 col-sm-12">
-                <img src={process.env.PUBLIC_URL + "about.png"}
+                <img src={process.env.PUBLIC_URL + "/about.png"}
                   className="footer__abbr img-fluid"
                   alt="International Union of Information Cities"/>
                 <div className="footer__contacts contacts">
