@@ -9,6 +9,7 @@ import configureStore from './store/configureStore'
 
 import Index from './containers/Index';
 import Profile from './containers/Profile';
+import Article from './containers/Article';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles/index.css';
@@ -21,7 +22,7 @@ ReactDOM.render(
       <div>
         <Route exact path="/" component={Index}/>
         <Route path="/profile" component={Profile}/>
-        {/* <Route path="/article" component={Article}/> */}
+        <Route path="/news/:article" component={Article}/>
       </div>
     </Router>
   </Provider>,

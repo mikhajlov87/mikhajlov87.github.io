@@ -5,14 +5,19 @@ import Masonry from 'react-masonry-component';
 import NewsCard from '../components/NewsCard';
 
 class News extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.onScrollNews = this.onScrollNews.bind(this)
+  }
   onLoadComponent() {
     this.props.onFetchNews()
   }
-  // onScrollNews() {
-  //   if (window.pageYOffset + window.innerHeight > (document.body.scrollHeight - 116)) {
-  //     this.props.onFetchNews()
-  //   }
-  // }
+  onScrollNews() {
+    if (window.pageYOffset + window.innerHeight > (document.body.scrollHeight - 116)) {
+      this.props.onFetchNews(this.props.page)
+    }
+  }
   componentWillMount() {
     this.onLoadComponent()
   }
@@ -28,7 +33,7 @@ class News extends React.Component {
       newsItems.push(
         <NewsCard
           key={article.id}
-          mainUrl={"article/" + article.id}
+          mainUrl={"news/" + article.id}
           mainImg={article.attributes.title_screenshot.url}
           title={article.attributes.title_ru}
           cityUrl={"/city/" + article.attributes.city_id}
@@ -40,18 +45,15 @@ class News extends React.Component {
           views={article.attributes.views}/>
       );
     });
-    {/*return (
-      <Masonry
-        className="news"
-        onScroll={this.onScrollNews}>
-        {newsItems}
-      </Masonry>
-    );*/}
+    console.log(newsItems)
     return (
-      <Masonry
-        className="news">
-        {newsItems}
-      </Masonry>
+      <div className="container">
+        <Masonry
+          className="news"
+          onScroll={this.onScrollNews.bind(this)}>
+          {newsItems}
+        </Masonry>
+      </div>
     );
   }
 }

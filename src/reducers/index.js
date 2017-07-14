@@ -18,13 +18,14 @@ export default function newsState(state = initialState, action) {
   switch (action.type) {
     case GET_NEWS_FULFILLED:
       let data = action.payload.data.data
+      let newsArray = []
       data.forEach(function(article) {
-        state.news.list.push(article)
+        newsArray.push(article)
       })
       return { ...state,
         news: {
           ...state.news,
-          list: state.news.list,
+          list: newsArray,
           page: ++state.news.page,
           noResults: !data,
           pending: false,

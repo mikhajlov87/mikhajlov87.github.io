@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, CardImg, CardBlock,
-  CardTitle, Button } from 'reactstrap';
-import Icon from 'react-fontawesome';
-import TimeAgo from 'react-timeago';
+  CardTitle, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import Icon from 'react-fontawesome'
+import TimeAgo from 'react-timeago'
 import ruStrings from 'react-timeago/lib/language-strings/ru'
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
  
@@ -12,8 +13,8 @@ const NewsCard = (props) => {
   return (
     <div className="col-sm-6 col-md-4 col-xl-3">
       <Card className="news__card text-center">
-        <a 
-          href={props.mainUrl}
+        <Link 
+          to={props.mainUrl}
           className="card__heading">
           <CardImg
             top
@@ -23,7 +24,7 @@ const NewsCard = (props) => {
           <CardTitle className="card__title text-center">
             {props.title.replace(/"{2,}/g,"")}
           </CardTitle>
-        </a>
+        </Link>
         <p className="card__category">Новости страны</p>
         <CardBlock className="card__content">
           <a 
