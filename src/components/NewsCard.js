@@ -12,27 +12,27 @@ const formatter = buildFormatter(ruStrings)
 const NewsCard = (props) => {
   return (
     <div className="col-sm-6 col-md-4 col-xl-3">
-      <Card className="news__card text-center">
+      <Card className="article-card text-center">
         <Link 
           to={props.mainUrl}
-          className="card__heading">
+          className="article-card__heading">
           <CardImg
             top
-            className="card__main-img"
+            className="article-card__main-img"
             src={props.mainImg}
-            alt="Card image" />
-          <CardTitle className="card__title text-center">
+            alt="article-card image" />
+          <CardTitle className="article-card__title text-center">
             {props.title.replace(/"{2,}/g,"")}
           </CardTitle>
         </Link>
-        <p className="card__category">Новости страны</p>
-        <CardBlock className="card__content">
+        <p className="article-card__category">Новости страны</p>
+        <CardBlock className="article-card__content">
           <a 
             href={props.cityUrl}
-            className="card__city">
+            className="article-card__city">
             {props.cityName}
           </a>
-          <div className="card__author author text-left">
+          <div className="article-card__author author text-left">
             <a href={"/user/" + props.user.id}>
               <img
                 src={props.user.avatar.thumb.url}
@@ -48,7 +48,7 @@ const NewsCard = (props) => {
               <TimeAgo className="author__date date" date={props.date} formatter={formatter} />
             </div>
           </div>
-          <div className="card__info info">
+          <div className="article-card__info info">
             <Button
               color="link"
               className="info__item"

@@ -5,6 +5,7 @@ import * as Actions from '../actions'
 
 import TopBar from '../components/TopBar';
 import NavBar from '../components/NavBar';
+import Content from '../components/Article/Content';
 import Footer from '../components/Footer';
 
 class Article extends Component {
@@ -13,6 +14,15 @@ class Article extends Component {
       <div>
         <TopBar/>
         <NavBar/>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-4 col-md-3 col-lg-3"></div>
+            <div className="col-sm-5 col-md-7 col-lg-7">
+              <Content/>
+            </div>
+            <div className="col-sm-3 col-md-2 col-lg-2"></div>
+          </div>
+        </div>
         <Footer/>
       </div>
     );

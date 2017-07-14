@@ -9,6 +9,7 @@
 @import url("news.css");
 @import url("footer.css");
 @import url("profile.css");
+@import url("article-content.css");
 
 body {
   font-family: "Roboto", sans-serif;
@@ -51,12 +52,16 @@ a {
 }
 .card {
   padding: 0;
-  border: 1px solid #f0f0f0;
-  border-radius: 0;
   background-color: #fff;
   transition: border 0.2s ease-in-out;
-  &-img-top {
-    border-radius: 0;
+  &-header {
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+  }
+  &-footer {
+    border: 0;
+    background-color: #fff;
   }
 }
 .date {
