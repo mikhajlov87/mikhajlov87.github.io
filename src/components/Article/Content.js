@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardHeader, CardImg, CardBlock,
-  CardTitle, CardFooter, Button } from 'reactstrap'
+import { Card, CardHeader, CardBlock,
+  CardTitle, CardFooter, Button, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import Icon from 'react-fontawesome'
 import TimeAgo from 'react-timeago'
@@ -73,9 +73,16 @@ const Content = (props) => {
         </div>
       </CardFooter>
       <CardBlock>
-        <div className="alert alert-info comments__alert">
-          <p>Чтобы оставить комментарий необходимо<a className="alert__log-in" data-target="#modalRegEnter" data-toggle="modal" href="#">Войти</a>&nbsp;или&nbsp;<a className="alert__log-in" href="#">Cоздать кабинет</a></p>
-        </div>
+        <Alert color="info" className="comments__alert">
+          Чтобы оставить комментарий необходимо&nbsp;
+          <a className="alert__log-in" href="#">
+            Войти
+          </a>
+          &nbsp;или&nbsp;
+          <a className="alert__log-in" href="#">
+            Cоздать кабинет
+          </a>
+        </Alert>
       </CardBlock>
     </Card>
   );
