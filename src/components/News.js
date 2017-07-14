@@ -45,7 +45,6 @@ class News extends React.Component {
           views={article.attributes.views}/>
       );
     });
-    console.log(newsItems)
     return (
       <div className="container">
         <Masonry
