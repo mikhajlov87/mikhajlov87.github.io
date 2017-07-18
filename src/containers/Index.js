@@ -17,7 +17,8 @@ class Index extends Component {
         <News
           news={this.props.news}
           page={this.props.news.page}
-          onFetchNews={this.props.actions.getNews}/>
+          onFetchNews={this.props.actions.getNews}
+          onGoAwayNews={this.props.actions.goAwayNews}/>
         <Footer/>
       </div>
     );

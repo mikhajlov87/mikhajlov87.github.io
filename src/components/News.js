@@ -4,11 +4,14 @@ import { bindActionCreators } from 'redux'
 import Masonry from 'react-masonry-component';
 import NewsCard from '../components/NewsCard';
 
+var newsItems = [];
+
 class News extends React.Component {
   constructor (props) {
     super(props)
 
     this.onScrollNews = this.onScrollNews.bind(this)
+    this.onLoadComponent()
   }
   onLoadComponent() {
     this.props.onFetchNews()
@@ -16,19 +19,21 @@ class News extends React.Component {
   onScrollNews() {
     if (window.pageYOffset + window.innerHeight > (document.body.scrollHeight - 116)) {
       this.props.onFetchNews(this.props.page)
+      window.removeEventListener('scroll', this.onScrollNews)
     }
-  }
-  componentWillMount() {
-    this.onLoadComponent()
   }
   componentDidMount() {
     window.addEventListener('scroll', this.onScrollNews)
   }
+  componentDidUpdate() {
+    window.addEventListener('scroll', this.onScrollNews)
+  }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScrollNews)
+    newsItems.length = 0
+    this.props.onGoAwayNews()
   }
   render() {
-    var newsItems = [];
     this.props.news.list.map((article) => {
       newsItems.push(
         <NewsCard

@@ -4,7 +4,8 @@ import {
   GET_NEWS_REJECTED,
   GET_NEWS_ITEM_PENDING,
   GET_NEWS_ITEM_FULFILLED,
-  GET_NEWS_ITEM_REJECTED } from '../actions'
+  GET_NEWS_ITEM_REJECTED,
+  GO_AWAY_NEWS } from '../actions'
 
 const initialState = {
   news: {
@@ -53,6 +54,13 @@ export default function newsState(state = initialState, action) {
           ...state.news,
           pending: false,
           error: true
+        }
+      }
+    case GO_AWAY_NEWS: 
+      return { ...state,
+        news: {
+          ...state.news,
+          page: 1
         }
       }
     case GET_NEWS_ITEM_FULFILLED:

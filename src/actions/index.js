@@ -10,9 +10,11 @@ export const GET_NEWS_ITEM_PENDING = 'GET_NEWS_ITEM_PENDING'
 export const GET_NEWS_ITEM_FULFILLED = 'GET_NEWS_ITEM_FULFILLED'
 export const GET_NEWS_ITEM_REJECTED = 'GET_NEWS_ITEM_REJECTED'
 
+export const GO_AWAY_NEWS = 'GO_AWAY_NEWS'
+
 const URL = 'http://news.iuic.info/v1/news'
 
-export function getNews(page = 1, per_page = 12) {
+export function getNews(page = 1, per_page = 16) {
   let params = {
     page: page,
     per_page: per_page
@@ -25,13 +27,16 @@ export function getNews(page = 1, per_page = 12) {
 }
 
 export function getNewsItem(id) {
-  let params = {
-    id: id,
-  }
   const itemURL = URL + "/" + id
   const request = axios.get(itemURL)
   return {
     type: GET_NEWS_ITEM,
     payload: request
+  }
+}
+
+export function goAwayNews() {
+  return {
+    type: GO_AWAY_NEWS
   }
 }
