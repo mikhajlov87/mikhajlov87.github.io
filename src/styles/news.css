@@ -9,17 +9,20 @@
     display: block;
     position: relative;
     background-color: #000;
-    &:hover .card__main-img {
+    &:hover .article-card__main-img {
       transition: all .8s;
       opacity: .7
     }
-    &:hover .card__title {
+    &:hover .article-card__title {
       text-decoration: underline;
+    }
+    &--no-image {
+      background-color: #fff;
     }
   }
   &__main-img {
     width: 100%;
-    min-height: 11.25em;
+    min-height: 6em;
     border-radius: 0;
   }
   &__title {
@@ -31,6 +34,10 @@
     font-size: 1em;
     line-height: 1.25em;
     color: #fff;
+    &--no-image {
+      position: relative;
+      color: #000;
+    }
   }
   &__category {
     margin-bottom: .769em;

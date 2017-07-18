@@ -15,13 +15,16 @@ const NewsCard = (props) => {
       <Card className="article-card text-center">
         <Link 
           to={props.mainUrl}
-          className="article-card__heading">
-          <CardImg
-            top
-            className="article-card__main-img"
-            src={props.mainImg}
-            alt="article-card image" />
-          <CardTitle className="article-card__title text-center">
+          className={props.mainImg ? "article-card__heading" : "article-card__heading article-card__heading--no-image"}>
+          {props.mainImg ? 
+            <CardImg
+              top
+              className="article-card__main-img"
+              src={props.mainImg}
+              alt="article-card image" />
+            :null
+          }
+          <CardTitle className={props.mainImg ? "article-card__title text-center" : "article-card__title text-center article-card__title--no-image"}>
             {props.title.replace(/"{2,}/g,"")}
           </CardTitle>
         </Link>
@@ -33,17 +36,17 @@ const NewsCard = (props) => {
             {props.cityName}
           </a>
           <div className="article-card__author author text-left">
-            <a href={"/user/" + props.user.id}>
+            <a href={"/user/" + props.user_id}>
               <img
-                src={props.user.avatar.thumb.url}
+                src={props.user_avatar}
                 className="rounded-circle author__avatar"
-                alt={props.user.name}/>
+                alt={props.user_name}/>
             </a>
             <div className="author__info">
               <a
-              href={"/user/" + props.user.id}
+              href={"/user/" + props.user_id}
               className="author__name align-top">
-                {props.user.name}
+                {props.user_name}
               </a>
               <TimeAgo className="author__date date" date={props.date} formatter={formatter} />
             </div>

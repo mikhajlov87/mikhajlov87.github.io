@@ -9,34 +9,48 @@ import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
  
 const formatter = buildFormatter(ruStrings)
 
-const Content = (props) => {
+const MainContent = (props) => {
   return (
     <Card
       className="main-article main-article__panel"
       tag="article">
       <CardHeader>
-        <h2 className="main-article__title">В Эстонии открыли вакансию корабельного кота</h2>
+        <h2 className="main-article__title">{props.title}</h2>
       </CardHeader>
       <CardBlock>
         <section className="main-article__content">
-          <figure className="main-article__picture picture">
-            <a className="picture__link" href="images/article-cat.jpg">
-              <img className="picture__img img-thumbnail" src="https://placeholdit.co//i/138x138"/>
-            </a>
-            <figcaption className="picture__actions actions"><a className="actions__show-gallery show-gallery" href="#"><span className="show-gallery__count">3&nbsp;</span><i className="fa fa-camera"></i></a></figcaption>
-          </figure>
-          <p className="main-article__description">Капитан эстонского корабля "Katharina" Хейкки Халдре разместил на портале вакансий CV-Online объявление об открытии вакансии корабельного кота. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis asperiores esse est qui alias ipsum illo a quis! Quia, eveniet! Voluptatem quisquam quia modi a necessitatibus in atque suscipit ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni placeat exercitationem accusamus, fugit. Atque sunt, deleniti similique consequuntur perspiciatis architecto aliquam sed eius rem iste nulla natus reiciendis deserunt.</p>
+          {props.youtube_link ? 
+            <div className="main-article__video embed-responsive embed-responsive-16by9">
+              <iframe className="embed-responsive-item" src={props.youtube_link} allowfullscreen></iframe>
+            </div>
+            : null
+          }
+          {props.image_count !== 0 ? 
+            <figure className="main-article__picture picture">
+              <a className="picture__link" href={props.main_image.url}>
+                <img className="picture__img img-thumbnail" src={props.main_image.small.url}/>
+              </a>
+              <figcaption className="picture__actions actions">
+                <div className="actions__show-gallery show-gallery">
+                  <span className="show-gallery__count">{props.image_count}&nbsp;</span>
+                  <i className="fa fa-camera"></i>
+                </div>
+              </figcaption>
+            </figure>
+            : null
+          }
+          <div className="main-article__description" dangerouslySetInnerHTML={ {__html:props.description} }></div>
         </section>
       </CardBlock>
       <CardFooter className="main-article__info-panel info-panel">
         <div className="row">
           <div className="col article-card__author author text-left">
-            <a href="/user/1">
-              <img src="https://placeholdit.co//i/138x138" className="author__avatar" alt="Хавронья фон Хрюкке"/>
+            <a href={props.user_link}>
+              <img src={props.user_avatar} className="author__avatar" alt={props.user_name}/>
             </a>
             <div className="author__info">
-              <a href="/user/1" className="author__name align-top">Хавронья фон Хрюкке</a>
-              <TimeAgo className="author__date date" date="2017-07-12T00:00:00.000Z" formatter={formatter} />
+              <a href={props.user_link} className="author__name align-top">{props.user_name}</a>
+              <TimeAgo className="author__date date" date={props.date} formatter={formatter} />
             </div>
           </div>
           <div className="col main-article__info info">
@@ -45,14 +59,14 @@ const Content = (props) => {
               className="info__item info__item--article"
               type="button">
               <Icon name="thumbs-up"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.like}</span>
             </Button>
             <Button
               color="link"
               className="info__item info__item--article"
               type="button">
               <Icon name="thumbs-down"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.dislike}</span>
             </Button>
             <Button
               color="link"
@@ -67,7 +81,7 @@ const Content = (props) => {
               type="button"
               disabled>
               <Icon name="eye"/>
-              <span className="info__count">0</span>
+              <span className="info__count">{props.views}</span>
             </Button>
           </div>
         </div>
@@ -88,4 +102,4 @@ const Content = (props) => {
   );
 };
 
-export default Content;
+export default MainContent;

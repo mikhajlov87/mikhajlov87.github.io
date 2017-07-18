@@ -34,12 +34,14 @@ class News extends React.Component {
         <NewsCard
           key={article.id}
           mainUrl={"news/" + article.id}
-          mainImg={article.attributes.title_screenshot.url}
+          mainImg={article.attributes.title_screenshot.mobile.url}
           title={article.attributes.title_ru}
           cityUrl={"/city/" + article.attributes.city_id}
           cityName={article.attributes.city_name_ru}
           date={article.attributes.created_at}
-          user={article.attributes.user}
+          user_id={article.attributes.user.id}
+          user_avatar={article.attributes.user.avatar.thumb.url}
+          user_name={article.attributes.user.name}
           like={article.attributes.news_like.voices}
           dislike={article.attributes.news_dislike.voices}
           views={article.attributes.views}/>
@@ -59,16 +61,6 @@ class News extends React.Component {
 
 News.propTypes = {
   onFetchNews: PropTypes.func.isRequired
-}
-
-function mapDispatchToProps(dispatch) {
-  return({
-    onScrollNews: () => {
-      if (window.pageYOffset + window.innerHeight > (document.body.scrollHeight - 116)) {
-        dispatch(this.props.actions.getNews(this.props.page))
-      }
-    }
-  })
 }
 
 export default News
