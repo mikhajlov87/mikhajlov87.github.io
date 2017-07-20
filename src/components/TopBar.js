@@ -17,13 +17,25 @@ export default class TopBar extends React.Component {
         </Button>
         <Link to="/"
           className="top-bar__link">
-          {/*<img src="%PUBLIC_URL%/main-logo.png" alt="IUIC"/>*/}
+          {/*<img src="%PUBLIC_URL%/logo-news.png" alt="IUIC"/>*/}
           <img
             className="top-bar__logo"
-            src={process.env.PUBLIC_URL + "/main-logo.png"}
-            alt="IUIC"/>
-          <h1 className="top-bar__title">News</h1>
+            src={process.env.PUBLIC_URL + "/logo-news.png"}
+            alt="IUIC.news"/>
         </Link>
+        <div className="top-bar__social-sign social-sign">
+          <p className="social-sign__text-caption">Войти с помощью:</p>
+          <a className="social-sign__btn social-sign__btn--facebook" href="">
+            <Icon
+              name="facebook"
+              tag="i"/>
+          </a>
+          <a className="social-sign__btn social-sign__btn--vk" href="">
+            <Icon
+              name="vk"
+              tag="i"/>
+          </a>
+        </div>
       </div>
     );
   }

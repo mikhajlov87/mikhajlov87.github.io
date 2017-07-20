@@ -1,10 +1,10 @@
 .top-bar {
+  background-color: #d9edf7;
   display: flex;
   padding: .5694em 1.25em;
-  background-color: #D7E2E3;
   &__about {
-    font-size: 1.001em;
     color: rgba(0, 0, 0, 0.5);
+    font-size: 1.001em;
     &:hover,
     &:active,
     &:focus {
@@ -23,10 +23,41 @@
   &__logo {
     height: 3.757em;
   }
-  &__title {
-    display: inline-block;
-    margin: auto;
-    font: 400 1.488em 'Roboto', sans-serif;
-    color: $light-gray;
+  &__social-sign {
+    padding: 5px 10px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+  }
+  .social-sign {
+    &__text-caption {
+      color: #054d50;
+      font-weight: 500;
+      margin: 0;
+    }
+    &__btn {
+      border-radius: 4px;
+      border: 1px solid transparent;
+      color: #054d50;
+      display: inline-block;
+      font-size: 18px;
+      height: 25px;
+      line-height: 23px;
+      opacity: 0.5;
+      padding: 0;
+      text-align: center;
+      width: 50px;
+      &--facebook:hover {
+        color: #3b5998;
+      }
+      &--vk:hover {
+        color: #6383a8;
+      }
+      &:hover {
+        background: #cdf3f3;
+        border: 1px solid #054d50;
+        opacity: 1;
+      }
+    }
   }
 }
