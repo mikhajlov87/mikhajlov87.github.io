@@ -7689,6 +7689,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
         border: 1px solid #054d50;
         opacity: 1;
       }
+.top-bar .social-sign__btn:active,.top-bar .social-sign__btn focus {
+        outline: none;
+      }
 .main-navbar {
   -ms-flex-pack: start;
       justify-content: flex-start;
@@ -8218,4 +8221,4 @@ a {
     border-color: #054d50;
     background-color: rgba(3, 120, 120, 0.1);
   }
-/*# sourceMappingURL=main.e704bc0c.css.map*/
+/*# sourceMappingURL=main.54130724.css.map*/
