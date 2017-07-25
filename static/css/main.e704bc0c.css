@@ -7665,13 +7665,14 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
       margin: 0;
     }
 .top-bar .social-sign__btn {
+      background-color: transparent;
       border-radius: 4px;
       border: 1px solid transparent;
       color: #054d50;
       display: inline-block;
       font-size: 18px;
       height: 25px;
-      line-height: 23px;
+      line-height: 25px;
       opacity: 0.5;
       padding: 0;
       text-align: center;
@@ -8217,4 +8218,4 @@ a {
     border-color: #054d50;
     background-color: rgba(3, 120, 120, 0.1);
   }
-/*# sourceMappingURL=main.b4883cee.css.map*/
+/*# sourceMappingURL=main.e704bc0c.css.map*/
