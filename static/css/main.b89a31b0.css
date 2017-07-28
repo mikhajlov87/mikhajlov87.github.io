@@ -7698,7 +7698,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   min-height: 3.125rem;
   margin-bottom: 1.25em;
   padding: 0 1em;
-  background-color: #BCCECF;
+  background-color: #bccecf;
 }
 .main-navbar__toggler {
     padding: .73em;
@@ -7914,7 +7914,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .footer {
   padding: 3.437em 0 2.812em;
   font-size: .875em;
-  background-color: #BCCECF;
+  background-color: #bccecf;
   color: #327373;
 }
 .footer__copyrights {
@@ -8054,6 +8054,46 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 .info-panel__infographics {
     text-align: left;
+  }
+.graygreen {
+  background-color: rgba(5, 77, 80, 0.15);
+  border-color: transparent;
+}
+.create-news__label {
+    color: #333;
+    font-weight: bold;
+  }
+.create-news__for-requred {
+    color: #f00;
+  }
+.create-news__header-3 {
+    font-size: 24px;
+    margin: 30px 0 20px;
+  }
+.create-news__dropzone--active {
+    background: #ccc;
+  }
+.create-news__dropzone-previews {
+    border: 1px dashed #666;
+    border-radius: 10px;
+    color: #666;
+  }
+.create-news__dropzone-message {
+    padding: 25px;
+  }
+.create-news__dropzone-icon {
+    margin-right: 25px;
+  }
+.create-news__dropzone-image {
+    width: 50px;
+  }
+.create-news__dropzone-caption {
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+.create-news__checkbox {
+    margin-left: 1.25rem;
   }
 body {
   font-family: "Roboto", sans-serif;
@@ -8221,4 +8261,4 @@ a {
     border-color: #054d50;
     background-color: rgba(3, 120, 120, 0.1);
   }
-/*# sourceMappingURL=main.54130724.css.map*/
+/*# sourceMappingURL=main.b89a31b0.css.map*/
